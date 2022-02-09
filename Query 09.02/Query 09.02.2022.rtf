@@ -22,3 +22,14 @@ FROM `courses`
 INNER JOIN `course_teacher` 
 INNER JOIN `teachers` ON `course_teacher`.`course_id` = `courses`.`id` 
 WHERE `teachers`.`id` = 44;
+
+
+4.
+
+SELECT `students`.`name`, `students`.`surname`, `degrees`.`name`, `departments`.`name`
+FROM `students`
+INNER JOIN `degrees`
+ON `degrees`.`id` = `students`.`degree_id`
+INNER JOIN `departments`
+ON `departments`.`id` = `degrees`.`department_id`
+ORDER BY `students`.`surname` ASC;
